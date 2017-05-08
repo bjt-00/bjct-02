@@ -8,5 +8,13 @@
 </head>
 <body>
 JSP and Servlet training
+<ol>
+	<li><a href="myServlet">My Servlet</a></li>
+	<li><a href="rest/jaxrs/html">My Rest Service</a></li>
+	<li>My Web Service 
+	  | <a href="MyWebService?wsdl">wsdl</a>
+	  | <a href="MyWebService?Tester">Tester</a>
+	</li>
+</ol>
 </body>
 </html>
