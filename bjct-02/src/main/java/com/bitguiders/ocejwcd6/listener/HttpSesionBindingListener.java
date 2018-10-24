@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSessionBindingListener;
  * Application Lifecycle Listener implementation class HttpSesionBindingListener
  *
  */
-@WebListener
+//@WebListener
 public class HttpSesionBindingListener implements HttpSessionBindingListener {
 
     /**

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSessionEvent;
  * Application Lifecycle Listener implementation class HttpSesionActivationListener
  *
  */
-@WebListener
+//@WebListener
 public class HttpSesionActivationListener implements HttpSessionActivationListener {
 
     /**
