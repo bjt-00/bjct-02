@@ -1,4 +1,4 @@
-package com.bitguiders.ocejwcd6.jaxrs;
+package com.bitguiders.jee.jaxrs;
 
 import java.util.List;
 
@@ -18,11 +18,12 @@ import javax.ws.rs.core.Response.Status;
 
 @Named
 @Stateless
-public class JAXRSClient {
+public class UserClient {
 	protected Client client;
 	//private static final Logger logger =Logger.getLogger(JAXRSClient.class.getName());
 	@PostConstruct
 	private void init() {
+	System.out.println("post construct called");
 	client = ClientBuilder.newClient();
 	}
 	@PreDestroy
@@ -30,7 +31,7 @@ public class JAXRSClient {
 	client.close();
 	}
 	
-	public String createCustomer(UserORM UserORM) {
+	public String createCustomer(UserModel UserORM) {
 		if (UserORM == null) {
 		//logger.log(Level.WARN, "customer is null.");
 		return "UserORMForm";
@@ -53,11 +54,11 @@ public class JAXRSClient {
 		}
 	public String retrieveCustomer(String id) {
 		String navigation;
-		UserORM UserORM =
+		UserModel UserORM =
 		client.target("http://localhost:8080/jsf-master-piece/rest/UserORM/xml")
 		.path(id)
 		.request(MediaType.APPLICATION_XML)
-		.get(UserORM.class);
+		.get(UserModel.class);
 		if (UserORM == null) {
 		navigation = "UserORMForm";
 		} else {
@@ -65,18 +66,20 @@ public class JAXRSClient {
 		}
 		return navigation;
 		}
-	public List<UserORM> retrieveAllUserORMs() {
-		List<UserORM> UserORM =
-		client.target("http://localhost:8080/jsf-master-piece/rest/UserORM")
-		.path("list")
-		.request(MediaType.APPLICATION_XML)
-		.get(new GenericType<List<UserORM>>() {});
+	public List<UserModel> retrieveAllUserORMs() {
+		List<UserModel> UserORM =
+		client.target("http://localhost:8080/bjct-02/rest/user")
+		//.path("user")
+		.request(MediaType.APPLICATION_JSON)
+		.get(new GenericType<List<UserModel>>() {});
 		return UserORM;
 		}
 	
 	public static void main(String arg[]){
-		JAXRSClient c = new JAXRSClient();
-		for(UserORM u:c.retrieveAllUserORMs()){
+		UserClient c = new UserClient();
+		c.init();
+		
+		for(UserModel u:c.retrieveAllUserORMs()){
 			//logger.info("-- "+u.getName());
 			System.out.println("-- "+u.getName());
 		}

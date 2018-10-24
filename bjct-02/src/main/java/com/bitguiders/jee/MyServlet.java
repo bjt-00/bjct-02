@@ -1,4 +1,4 @@
-package com.bitguiders.jee7;
+package com.bitguiders.jee;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

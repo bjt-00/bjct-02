@@ -10,7 +10,10 @@
 JSP and Servlet training
 <ol>
 	<li><a href="myServlet">My Servlet</a></li>
-	<li><a href="rest/jaxrs/html">My Rest Service</a></li>
+	<li>User Rest Service
+	  | <a href="rest/user">GET</a>
+	  | <a href="rest/user/123">GET</a>
+	</li>
 	<li>My Web Service 
 	  | <a href="MyWebService?wsdl">wsdl</a>
 	  | <a href="MyWebService?Tester">Tester</a>

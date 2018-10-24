@@ -1,4 +1,4 @@
-package com.bitguiders.jee7.jaxws;
+package com.bitguiders.jee.jaxws;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;

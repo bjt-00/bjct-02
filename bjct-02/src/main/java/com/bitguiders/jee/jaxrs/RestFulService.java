@@ -1,3 +1,4 @@
+package com.bitguiders.jee.jaxrs;
 /*package com.bitguiders.ocejwcd6.jaxrs;
 
 import java.io.File;
